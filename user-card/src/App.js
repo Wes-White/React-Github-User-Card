@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import UserCard from "./components/UserCard";
 import FollowerCard from "./components/FollowerCard";
+import NavBar from "./components/NavBar";
 
 class App extends React.Component {
   constructor() {
@@ -55,16 +56,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <input
-          placeholder="Search User"
-          type="text"
+        <NavBar
           value={this.state.userChange}
-          onChange={this.handleTextChange}
+          changer={this.handleTextChange}
+          button={this.handleUserChange}
         />
-        <button onClick={this.handleUserChange}>Search</button>
-        <UserCard data={this.state.user} />
-        <h1>My Followers List</h1>
-        <FollowerCard data={this.state.followers} />
+        <h1>Current User Selected</h1>
+
+        <div className="body-container">
+          <UserCard data={this.state.user} />
+          <h2>My Followers List</h2>
+          <FollowerCard data={this.state.followers} />
+        </div>
       </div>
     );
   }

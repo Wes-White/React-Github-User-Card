@@ -1,46 +1,57 @@
 .App {
   text-align: center;
+  background-image: url("./Img/bg.jpg");
+  height: 100%;
+  background-repeat: repeat-y;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search {
+  width: 200px;
+  height: 40px;
+  margin: 15px;
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.body-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-body {
+  background-color: #cc80cb;
+  text-decoration: none;
 }
 
 .user-card {
   width: 300px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.user-card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .user-name {
   font-size: 30px;
+}
+
+.follower-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.follower-card {
+  width: 300px;
+  margin: 30px;
+  margin-top: 40px;
+}
+.follower-card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

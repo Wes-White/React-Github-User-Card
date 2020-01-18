@@ -6,31 +6,31 @@ import {
   CardBody,
   CardLink,
   CardTitle,
-  CardSubtitle
+  Button
 } from "reactstrap";
 
 const FollowerCard = props => {
   return (
-    <div>
+    <div className="follower-container">
       {props.data.map((follower, index) => {
         return (
-          <Card className="user-card">
-            <CardBody>
-              <CardTitle className="user-name">
-                {props.data[index].login}
-              </CardTitle>
-            </CardBody>
-            <img
+          <Card className="follower-card">
+            <CardImg
               width="100%"
               src={props.data[index].avatar_url}
               alt="GH-Image"
             />
             <CardBody>
-              <CardText>{props.data[index].bio}</CardText>
+              <CardTitle className="user-name">
+                {props.data[index].login}
+              </CardTitle>
+              <CardText>
+                Followers: {props.data.followers} Following:{" "}
+                {props.data.following}
+              </CardText>
               <CardLink href={props.data[index].html_url} target="_blank">
-                See my Profile
+                <Button color="primary">See my Profile</Button>
               </CardLink>
-              <CardText></CardText>
             </CardBody>
           </Card>
         );
