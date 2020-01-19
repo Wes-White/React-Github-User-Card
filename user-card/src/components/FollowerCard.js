@@ -2,7 +2,6 @@ import React from "react";
 import {
   Card,
   CardImg,
-  CardText,
   CardBody,
   CardLink,
   CardTitle,
@@ -24,10 +23,7 @@ const FollowerCard = props => {
               <CardTitle className="user-name">
                 {props.data[index].login}
               </CardTitle>
-              <CardText>
-                Followers: {props.data.followers} Following:{" "}
-                {props.data.following}
-              </CardText>
+
               <CardLink href={props.data[index].html_url} target="_blank">
                 <Button color="primary">See my Profile</Button>
               </CardLink>
