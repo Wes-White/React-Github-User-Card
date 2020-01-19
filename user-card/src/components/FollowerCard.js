@@ -14,7 +14,7 @@ const FollowerCard = props => {
     <div className="follower-container">
       {props.data.map((follower, index) => {
         return (
-          <Card className="follower-card">
+          <Card className="follower-card" key={index}>
             <CardImg
               width="100%"
               src={props.data[index].avatar_url}

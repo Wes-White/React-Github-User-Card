@@ -9,7 +9,8 @@ class App extends React.Component {
     super();
     this.state = {
       user: "",
-      followers: []
+      followers: [],
+      newUser: ""
     };
   }
 
@@ -22,33 +23,31 @@ class App extends React.Component {
         return Promise.all([res1.json(), res2.json()]);
       })
       .then(([res1, res2]) => {
-        console.log("This is my first fetch", res1);
         this.setState({ ...this.state, user: res1 });
-        console.log("This is my second fetch", res2);
+
         this.setState({ ...this.state, followers: res2 });
       });
   }
 
   handleTextChange = e => {
-    console.log("my input says", e.target.value);
-    this.setState({ ...this.state, user: e.target.value });
-
-    console.log("My new user stat is ", this.state.user);
+    this.setState({
+      ...this.state,
+      newUser: e.target.value
+    });
   };
 
   handleUserChange = e => {
     e.preventDefault();
     Promise.all([
-      fetch(`https://api.github.com/users/${this.state.user}`),
-      fetch(`https://api.github.com/users/${this.state.user}/followers`)
+      fetch(`https://api.github.com/users/${this.state.newUser}`),
+      fetch(`https://api.github.com/users/${this.state.newUser}/followers`)
     ])
       .then(([res1, res2]) => {
         return Promise.all([res1.json(), res2.json()]);
       })
       .then(([res1, res2]) => {
-        console.log("This is my first fetch", res1);
         this.setState({ ...this.state, user: res1 });
-        console.log("This is my second fetch", res2);
+
         this.setState({ ...this.state, followers: res2 });
       });
   };
@@ -61,11 +60,11 @@ class App extends React.Component {
           changer={this.handleTextChange}
           button={this.handleUserChange}
         />
-        <h1>Current User Selected</h1>
+        <p className="title">Active User</p>
 
         <div className="body-container">
           <UserCard data={this.state.user} />
-          <h2>My Followers List</h2>
+          <p className="subtitle">Followers</p>
           <FollowerCard data={this.state.followers} />
         </div>
       </div>
