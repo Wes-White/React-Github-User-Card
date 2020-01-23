@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  background-image: url("./Img/bg.jpg");
+  height: 100%;
+  background-repeat: repeat-y;
+  font-family: "Righteous", cursive;
+}
+
+.search {
+  width: 200px;
+  height: 40px;
+  margin: 15px;
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
+  color: white;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body {
+  background-color: #cc80cb;
+}
+
+.user-card {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.user-card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-name {
+  font-size: 30px;
+}
+
+.follower-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.follower-card {
+  width: 300px;
+  margin: 30px;
+  margin-top: 40px;
+}
+.follower-card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.subtitle {
+  font-size: 3.5rem;
+}
